@@ -48,37 +48,43 @@
 			<nav class="au-breadcrumbs" aria-label="breadcrumb">
 			  <ul class="au-link-list au-link-list--inline">
 				<li><a href="welcome.html">My CASA</a></li>
-				<li>ARN application</li>
+				  <li><a href="personal.html">Personal details</a></li>
+				   <li>Update Address</li>
 			  </ul>
 			</nav>	
 				
 			<header class="au-header" role="banner">
-				<h1 class="au-header-heading">Your Name</h1>
-				<a class="au-direction-link au-direction-link--left" href="welcome.html">Back</a>
+				<h1 class="au-header-heading">Residential Address</h1>
+				<a class="au-direction-link au-direction-link--left" href="#">Back</a>
 
 				</header>
+		
 				
+<label for="select1block">Country</label>
+<select id="select1block" class="au-select au-select--block">
+   <option value="1">Australia</option>
+  <option value="2">Argentina</option>
+  <option value="3">Bangladesh</option>
+  <option value="4">Belgium</option>
+  <option value="5">Canada</option>
+  <option value="6">China</option>
+  <option value="7">Czech Republic</option>
+  <option value="8">Denmark</option>
+</select>
+				
+				<br>
+				<br>
+				<label for="text-input-block">Address</label>
+				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text" value="">
+				
+				<br />
+				
+				<a class="au-btn au-btn--secondary" href="arn3-other-country.html">Enter address manually</a>
 			
-				<div class="au-callout" aria-label="Callout description1">
-  Note: Your name must match the names on your proof of identification.
-</div>
 				
-				<br />
+		
 				
-					<label for="text-input-block">Given names</label>
-				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text" value="Bob">
-				
-				<br />
-				
-				<label for="text-input-block">Family name</label>
-				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text" value="Furzer">
-				
-				<br />
-				
-				
-			
-				
-				<h4><strong>Have you ever been known by a previous name?</strong></h4>
+				<p>Is your postal address different to your residential address?</p>
 				
 				<br />
 				
@@ -94,22 +100,14 @@
 				  <span class="au-control-input__text">Yes</span>
 				</label>
 				
+				<br><br>
 				
-				<br /><br />
-				
-				<div class="form-navigation">
-				
-				
-				
-				
-				<a class="au-btn" href="arn2.html">Next</a>
-					
-					<hr />
+			
+  			<a class="au-btn" href="address-add-successful.html">Add address</a>
 
-<a href="saved.html" class="au-btn au-btn--secondary">
-  Save and exit
-</a>&nbsp; to continue this application later
-					
+
+
+				
 				</div>
 				
 			</form>
