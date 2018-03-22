@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>My CASA</title>
+<title>myCASA</title>
 
 	<link rel="stylesheet" href="furnace.min.css">
 	<link rel="stylesheet" href="lead.css">
@@ -47,15 +47,16 @@
 				
 			<nav class="au-breadcrumbs" aria-label="breadcrumb">
 			  <ul class="au-link-list au-link-list--inline">
-				<li><a href="welcome.html">My CASA</a></li>
+				<li><a href="welcome.html">myCASA</a></li>
 				<li>ARN application</li>
 			  </ul>
 			</nav>	
 			
 							<div role="alert" class="au-body au-page-alerts au-page-alerts--warning">
-  <h3>There was a problem verifying your document.</h3>
+  <h3>We have been unable to verify your document.</h3>
 					<p>
-You can <a href="arn6-reselect.html">return to the previous screen</a> and select a different form of secondary identification. Or <a href="arn7-poi-upload.html">upload a copy of your documentation</a> for manual verification.</p>
+You can <a href="arn6-reselect.html">return to the previous screen</a> and select a different form of secondary identification. <br><br>
+						Otherwise you must <a href="arn7-poi-upload.html">upload a copy of your documentation</a> for manual verification.</p>
 </div>
 				
 			<header class="au-header" role="banner">
@@ -115,7 +116,7 @@ You can <a href="arn6-reselect.html">return to the previous screen</a> and selec
 			
 				
 					<label for="text-input-block">Drivers Licence Number</label>
-				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text" value="" disabled>
+				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text" value="123456" disabled>
 				<br />	
 				
 				<div class="date-entry">
@@ -123,21 +124,24 @@ You can <a href="arn6-reselect.html">return to the previous screen</a> and selec
 					
 				<div class="date date-day">
 					<label for="text-input-block1">Day</label>	
-					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block1" type="text" value="" disabled>
+					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block1" type="text" value="01" disabled>
 				</div>	
 				<div class="date date-month">	
 					<label for="text-input-block2">Month</label>	
-					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block2" type="text" value="" disabled>
+					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block2" type="text" value="03" disabled>
 					</div>
 				<div class="date date-year">
 					<label for="text-input-block3">Year</label>	
-					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block3" type="text" value="" disabled>
+					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block3" type="text" value="2020" disabled>
 								
 					</div>
 					<p class="date-guidance">For example, 31 01 2020</p>	
 				</div>				
 				<br>
-			
+											<p class="au-callout" aria-label="Callout description1">
+By continuing this application you confirm that you are authorised to provide the personal details presented and you consent to your  information being checked with the document issuer or official record holder via third party systems for the purpose of confirming your identity.
+</p>				
+				<br>
 				
   			<a class="au-btn" href="arn7-poi-upload.html">Next</a>
 				
