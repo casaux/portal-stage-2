@@ -125,6 +125,10 @@ a.cancel{
 	margin-bottom:0.45rem !important;
 }
 
+.au-callout .au-control-input__text{
+	line-height:1.5rem;
+}
+
 /* mobile */
 @media only screen and  (max-width: 575px) { 
 	/*.au-grid .container{background:red}*/
