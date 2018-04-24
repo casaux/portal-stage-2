@@ -71,7 +71,9 @@ main{
 
 
 .error{
-	color:#ea4200;
+	/*color:#ea4200;
+	removed as currently not AA accessible on grey bg
+	*/
 }
 
 
