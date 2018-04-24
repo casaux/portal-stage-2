@@ -20,9 +20,10 @@ main{
 	height:60px;
 }
 
-.header .logo{
+.header .logo.au-body.au-body--dark{
 	float:left;
 	margin-left:24px;
+	background-color: transparent;
 }
 
 .header .user{
