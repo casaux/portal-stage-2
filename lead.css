@@ -11,6 +11,26 @@ main{
 	background: #fff;
 }
 
+.banner{
+	background: #313131;
+	color: #FFFFFF;
+	}
+
+.banner{
+	padding-left:25px;
+	padding-top:10px;
+	padding-bottom:10px; 
+}
+
+
+.banner a
+{color: #FFFFFF;
+}
+
+.banner a:hover
+{color: #FFFFFF;
+}
+
 .header{
 	background:#0080A2;
 }
@@ -46,8 +66,7 @@ main{
 	background:#4C4C4C;
 	margin-top:120px;
 	min-height:200px;
-	border-bottom: 10px solid #0080A2;
-
+	
 }
 
 
@@ -57,11 +76,10 @@ main{
 
 .footer iframe{
 	margin:auto;
-	height:500px;
+	height:400px;
 	overflow:hidden; 
 	width:100%;
-	padding-bottom:0;
-	margin-bottom:0;
+
 }
 
 .hr{
@@ -72,9 +90,7 @@ main{
 
 
 .error{
-	/*color:#ea4200;
-	removed as currently not AA accessible on grey bg
-	*/
+	color:#ea4200;
 }
 
 
@@ -130,10 +146,6 @@ a.cancel{
 	margin-bottom:0.45rem !important;
 }
 
-.au-callout .au-control-input__text{
-	line-height:1.5rem;
-}
-
 /* mobile */
 @media only screen and  (max-width: 575px) { 
 	/*.au-grid .container{background:red}*/
@@ -151,16 +163,8 @@ a.cancel{
 	/*.au-grid .container{background:yellow}*/
 	.au-grid .col-xs-6{width:50%;}
 }
-
-
-
 /*
-focus over-rides for accessibility
-light theme
 */
-
-
-
 
 .au-body .au-accordion__title:focus,.au-accordion__title:focus{outline-color:#12b5ea;}
 .au-body a:focus{outline-color:#12b5ea;}
