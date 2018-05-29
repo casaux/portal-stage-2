@@ -142,6 +142,13 @@ a.cancel{
 	font-size:.875rem;
 }
 
+.sex-guidance{
+	clear:both;
+	position:relative;
+	font-size:.875rem;
+}
+
+
 .form-descriptor{
 	margin-bottom:0.45rem !important;
 }
