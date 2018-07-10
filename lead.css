@@ -119,6 +119,8 @@ a.cancel{
 
 .date-entry{
 	margin-top:1rem;
+	width:100%;
+	display: block;
 }
 label {
 	width:100%;
@@ -131,6 +133,8 @@ label {
 	width:25%;
 	margin-right:2%;
 	float:left;
+	clear:both;
+	display: block;
 }
 
 .date-entry .date-year{
@@ -154,6 +158,12 @@ label {
 .help {
 	float:right;
 }
+.help-img{
+	width: 40%;
+	clear: both;
+	display: block;
+	margin: .6rem 0 1rem 0;
+}
 .hidden{
 	display: none;
 	visibility: hidden;
@@ -161,7 +171,10 @@ label {
 img{width:100%;}
 .form-descriptor{
 	margin-bottom:0.45rem !important;
-	display: :block;
+	display:block;
+	width: 100%;
+	float:left;
+	clear: both;
 	/*font-weight: 400!important;
 	font-size: 1.4rem!important;*/
 }
