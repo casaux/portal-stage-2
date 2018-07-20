@@ -46,7 +46,7 @@ label,.label{
 	margin-top:1rem;
 	margin-bottom:.5rem;
 	width:100%;
-	/*float:left;*/
+	float:left;
 }
 .panel-id .au-control-input__text{
   padding-top:0;
