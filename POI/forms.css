@@ -15,6 +15,7 @@ label,.label{
 .form-section{
   display: block;
   max-width: 100%;
+  width:100%;
   float:left;
   margin:0 0 2rem 0;
 }
@@ -23,7 +24,7 @@ label,.label{
   margin-bottom: 8px;
   margin-top: 10px;
 }
-
+.au-control-input {font-weight:normal;}
 /*Panel*/
 .panel-id{
 	font-size: 1rem;
@@ -130,3 +131,4 @@ p, .au-callout{display: block;width:100%;}
   margin: 1rem 0;
 }
 .filename a {float:right;}
+ul li {margin-bottom:.5rem;/*font-weight: 500;*/}
