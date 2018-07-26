@@ -19,7 +19,7 @@ main{
 .banner{
 	padding-left:25px;
 	padding-top:10px;
-	padding-bottom:10px; 
+	padding-bottom:10px;
 }
 
 
@@ -50,8 +50,9 @@ main{
 	float:right;
 	display:table;
 	margin-right:24px;
+	width:60%;
 }
-
+.header .user a {float:right;}
 .header .user .au-body--dark{
 	background:transparent;
    display: table-cell;
@@ -66,7 +67,7 @@ main{
 	background:#4C4C4C;
 	margin-top:120px;
 	min-height:200px;
-	
+
 }
 
 
@@ -77,7 +78,7 @@ main{
 .footer iframe{
 	margin:auto;
 	height:400px;
-	overflow:hidden; 
+	overflow:hidden;
 	width:100%;
 
 }
@@ -113,33 +114,40 @@ a.cancel{
 }
 
 .au-callout{
-	margin-top:0 !important;	
+	margin-top:0 !important;
 }
 
 .date-entry{
 	margin-top:1rem;
+	width:100%;
+	display: block;
 }
-
+label {
+	width:100%;
+}
 .date-entry label{
 	font-size:.875rem;
 }
 
 .date-entry .date-day, .date-entry .date-month{
-	width:25%;	
+	width:25%;
 	margin-right:2%;
 	float:left;
+	/*clear:both;
+	display: block;*/
 }
 
 .date-entry .date-year{
 	width:46%;
 	float:left;
-} 
+}
 
 .date-guidance{
 	clear:both;
 	padding-top:0.85rem;
 	position:relative;
 	font-size:.875rem;
+	display: block;
 }
 
 .sex-guidance{
@@ -147,20 +155,44 @@ a.cancel{
 	position:relative;
 	font-size:.875rem;
 }
+.help {
+	float:right;
+}
+.help-img{
+	width: 40%;
+	clear: both;
+	display: block;
+	margin: .6rem 0 1rem 0;
+}
+.info{
 
-
+}
+.hidden{
+	display: none;
+	visibility: hidden;
+}
+img{width:100%;}
 .form-descriptor{
 	margin-bottom:0.45rem !important;
+	display:block;
+	width: 100%;
+	float:left;
+	clear: both;
+	/*font-weight: 400!important;
+	font-size: 1.4rem!important;*/
 }
-
+/* helpers */
+.padding-bottom-1x{
+padding-bottom:1rem;
+}
 /* mobile */
-@media only screen and  (max-width: 575px) { 
+@media only screen and  (max-width: 575px) {
 	/*.au-grid .container{background:red}*/
 	.au-grid .col-xs-6{width:100%;}
 }
 
 /* tablet */
-@media only screen and  (min-width: 576px) { 
+@media only screen and  (min-width: 576px) {
 	/*.au-grid .container{background:pink}*/
 	.au-grid .col-xs-6{width:100%;}
 }
@@ -185,14 +217,19 @@ a.cancel{
 .au-skip-link__link:active,.au-skip-link__link:focus{outline-color:#12b5ea;}
 .au-tags>li>a:focus,.au-tags>li>button:focus,.au-tags>dd>a:focus,.au-tags>dd>button:focus{outline-color:#12b5ea;}
 .au-text-input:focus{outline-color:#12b5ea;}
-	
-	
-			
+
+/* Hide type=number spinner */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /*
 focus over-rides for accessibility
 dark theme
-*/			
-			
+*/
+
 .au-accordion--dark .au-body .au-accordion__title:focus,.au-accordion--dark .au-accordion__title:focus{outline-color:#FFE17D;}
 .au-body.au-body--dark a:focus{outline-color:#FFE17D;}
 .au-body.au-body--dark [tabindex="0"]:focus,.au-body.au-body--dark :target{outline-color:#FFE17D;}
@@ -204,7 +241,3 @@ dark theme
 .au-select.au-select--dark:focus{outline-color:#FFE17D;}
 .au-tags.au-tags--dark>li>a:focus,.au-tags.au-tags--dark>li>button:focus,.au-tags.au-tags--dark>dd>a:focus,.au-tags.au-tags--dark>dd>button:focus{outline-color:#FFE17D;}
 .au-text-input.au-text-input--dark:focus{outline-color:#FFE17D;}
-
-
-
-

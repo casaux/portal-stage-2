@@ -1,0 +1,237 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>myCASA</title>
+
+	<link rel="stylesheet" href="../furnace.min.css">
+	<link rel="stylesheet" href="../lead.css">
+	<link rel="stylesheet" href="forms.css">
+	<script type="text/javascript" src="../furnace.min.js"></script>
+
+	<script src="../jquery.min.js"></script>
+
+   <script src="../jquery.js"></script>
+
+</head>
+
+<body class="live-demo au-body au-grid arn-application js">
+
+
+<main class="au-grid">
+
+
+	<div class="header">
+		<div class="container">
+			<div class="row">
+					<div class="logo au-body au-body--dark">
+						<a href="../index.html"><img src="../CASALOGO-white-i.svg" width="256"></a>
+					</div>
+					<div class="user">
+						<div class="au-body au-body--dark">
+						   <a class="au-btn au-btn--dark" href="signed-out.html">Sign out</a></div>
+					</div>
+
+
+			</div>
+		</div>
+	</div>	<div class="banner">
+	<div class=container>
+		<style>
+			.banner {padding-left: 25px;}
+			.banner {padding-top: 10px;}
+			.banner {padding-bottom: 10px;}
+
+		</style>
+		This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
+	</div>
+	</div>
+
+
+	<div class="body">
+		<div class="container">
+			<div class="col-xs-6">
+			<nav class="au-breadcrumbs" aria-label="breadcrumb">
+			  <ul class="au-link-list au-link-list--inline">
+				<li><a href="welcome.html">myCASA</a></li>
+				<li>ARN application</li>
+			  </ul>
+			</nav>
+
+		<header class="au-header padding-bottom-1x" role="banner">
+				<h1 class="au-header-heading">Verify identification</h1>
+				<a class="au-direction-link au-direction-link--left" href="id-v5.html">Back</a>
+  	</header>
+		<p class="au-callout" aria-label="Callout description1">
+		  <strong>CASA requires 100 points of identification to issue an individual with an ARN.</strong>
+		</p>
+		<h2>Secondary identification</h2>
+<h3>Online ID check</h3>
+<p class="form-text margin-top-0">Most Australian-issued IDs can be verified in real time. All you have to do is enter your ID details and CASA will confirm that your information matches the records of <a href="https://www.dvs.gov.au/Pages/default.aspx" target="_blank">Document Verification Service (DVS).</a></p>
+<br>
+<section class="panel-id-v5" >
+	<div class="doc-name">
+		<label class="au-control-input">
+			<input class="au-control-input__input" type="checkbox" name="checkbox-ex">
+			<span class="au-control-input__text">Department of Veteran Affairs card</span>
+		</label>
+	</div>
+		<div class="points">40 Points</div>
+</section>
+<section class="panel-id-v5">
+		<div class="doc-name">
+			<label class="au-control-input">
+				<input class="au-control-input__input" type="checkbox" name="checkbox-ex">
+				<div class="au-control-input__text">Medicare Care
+				</div>
+			</label>
+		</div>
+		<div class="points">25 Points</div>
+</section>
+<section class="panel-id-v5">
+		<div class="doc-name">
+			<label class="au-control-input">
+				<input class="au-control-input__input" type="checkbox" name="checkbox-ex">
+				<span class="au-control-input__text">	Centerlink card (with reference number)</span>
+			</label>
+		</div>
+		<div class="points">25 Points</div>
+</section>
+
+<section class="panel-id-v5" >
+	<div class="doc-name">
+		<label class="au-control-input">
+			<input class="au-control-input__input" type="checkbox" name="checkbox-ex">
+			<span class="au-control-input__text">Medicare Card</span>
+		</label>
+	</div>
+		<div class="points">25 Points</div>
+</section>
+<p>&nbsp;</p>
+<h3>Manual ID check</h3>
+<p class="form-text margin-top-0">Upload a <a href="https://www.casa.gov.au/standard-page/people-who-can-certify-proof-identity-documents" target="_blank">Certified copy</a> and we will check your identification manually.
+Your ARN will be issued within <strong>5 business days</strong> of your application being submitted.</p>
+<br>
+<section class="panel-id-v5">
+		<div class="doc-name">
+			<label class="au-control-input">
+				<input class="au-control-input__input" type="checkbox" name="checkbox-ex">
+				<span class="au-control-input__text">Birth card (NSW BDM only)</span>
+			</label>
+		</div>
+		<div class="points">25 Points</div>
+</section>
+<section class="panel-id-v5">
+		<div class="doc-name">
+			<label class="au-control-input">
+				<input class="au-control-input__input" type="checkbox" name="checkbox-ex">
+				<span class="au-control-input__text">Credit card or account card</span>
+			</label>
+		</div>
+		<div class="points">25 Points</div>
+</section>
+<section class="panel-id-v5">
+		<div class="doc-name">
+			<label class="au-control-input">
+				<input class="au-control-input__input" type="checkbox" name="checkbox-ex">
+				<span class="au-control-input__text">Bank statement</span>
+			</label>
+		</div>
+		<div class="points">25 Points</div>
+</section>
+<section class="panel-id-v5">
+		<div class="doc-name">
+			<label class="au-control-input">
+				<input class="au-control-input__input" type="checkbox" name="checkbox-ex">
+				<div class="au-control-input__text">Taxation assessment notice</div>
+			</label>
+		</div>
+		<div class="points">25 Points</div>
+</section>
+<div id="more">
+
+	<section class="panel-id-v5">
+			<div class="doc-name">
+				<label class="au-control-input">
+					<input class="au-control-input__input" type="checkbox" name="checkbox-ex">
+					<div class="au-control-input__text">Rating authority - e.g. land rates</div>
+				</label>
+			</div>
+			<div class="points">25 Points</div>
+	</section>
+	<section class="panel-id-v5">
+			<div class="doc-name">
+				<label class="au-control-input">
+					<input class="au-control-input__input" type="checkbox" name="checkbox-ex">
+					<div class="au-control-input__text">Property lease agreement - current address </div>
+				</label>
+			</div>
+			<div class="points">25 Points</div>
+	</section>
+
+</div>
+
+<p class="clearfix">
+	<br>
+	<a href="#" class=" " id="seeMore">
+		See more IDs
+	</a>
+</p>
+
+				<div class="form-navigation"><br>
+				<!--	<p>You have <strong>0 points</strong> of identification completed. </p>-->
+					<br>
+					<a class="au-btn" href="arn-passport-v5.html" id="next">Next</a>
+					<hr />
+					<a href="../saved.html" class="au-btn au-btn--secondary">
+	  			Save and exit
+					</a>&nbsp; to continue this application later
+				</div>
+</form>
+</div>
+
+
+			<!--
+			<div class="row">
+			  <div class="col-xs-4"><span>4</span></div>
+			  <div class="col-xs-4"><span>4</span></div>
+			  <div class="col-xs-4"><span>4</span></div>
+			</div>-->
+
+		</div>
+	</div>
+
+<div class="footer">
+		<div class="footer-wrapper">
+			<iframe src="../footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+		</div>
+	</div>
+
+
+</main>
+
+<script>
+$('#more, #alert').hide();
+$('#seeMore').click(function(){
+	$('#more').show();
+	$('#seeMore').hide();
+	return false;
+});
+
+$('#next').click(function(){
+	$('#alert').show();
+	('html').offset({top:300});
+	return false;
+});
+
+	var type = window.location.hash.substr(1);
+	//alert (type);
+	if (type=='passport'){
+		$('#passport').addClass('complete');
+		$('html').offset({top:0});
+		document.getElementById("points").textContent="70 Points";
+	}
+</script>
+</body>
+</html>
