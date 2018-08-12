@@ -2,7 +2,7 @@
 label,.label{
   display: block!important;
   max-width: 100%;
-  font-size: 1rem;
+  font-size: 1rem!important;
   font-weight: 600;
 }
 .form-text{
@@ -25,6 +25,13 @@ label,.label{
   margin-top: 10px;
 }
 .au-control-input {font-weight:normal;}
+.au-control-input img {
+  /* margin-left: 2.5rem; */
+  padding: .5rem;
+  border: 1px solid #efefef;
+  /* margin-top: -.01rem; */
+  width: 97%;
+}
 /*Panel*/
 .panel-id{
 	font-size: 1rem;
@@ -37,6 +44,7 @@ label,.label{
 	width:100%;
 	float:left;
 }
+.date-entry{float:left;margin-top: 1.5rem;}
 .panel-id-v5{
 	font-size: 1rem;
 	line-height: 1.5;
@@ -115,7 +123,7 @@ p, .au-callout{display: block;width:100%;}
     width:30%;
     text-align:center;
 }
-
+#help-ref-num{width:50%;margin: 1rem 0;}
 .inputfile:focus ~ label,
 .inputfile ~ label:hover {
   background-color: #313131;
