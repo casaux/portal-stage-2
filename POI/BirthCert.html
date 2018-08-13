@@ -66,39 +66,93 @@
 				</header>
 
 				<label for="select1block">Select State</label>
-					<select id="select-state" class="au-select au-select--block">
+					<select id="select-state" class="au-select au-select--block" onchange="state(this.value);">
 					  <option value="">Please select</option>
-					  <option value="1">Victoria</option>
+					  <option value="1">Australian Capital Territory</option>
 					  <option value="2">New South Wales</option>
-					  <option value="3">Queensland</option>
+					  <!--<option value="3">Northern Territory</option>
+						<option value="4">South Australia</option>-->
+						<option value="5">Tasmania</option>
+						<option value="6">Queensland</option>
+						<!--<option value="7">Western Australia</option>-->
+						<option value="8">Victoria</option>
 					</select>
 	<p>&nbsp;</p>
-				<div id="cert-type">
-				<strong>Type of certificate</strong><br><br>
+				<div id="act-cert-type" class="hidden">
+				<strong>Type of certificate</strong><br>
+				<div class="form-text">Select the certificate that matches yours.</div>
+				<br>
 				<label class="au-control-input">
-				  <input class="au-control-input__input" type="radio" name="radio-ex" id="current">
-					<span class="au-control-input__text">Current certificate</span>
-					<img src="img/VIC-current.jpg">
+				  <input class="au-control-input__input" type="radio" name="radio-ex" id="ACTv1" onchange="certType(this.id);">
+					<span class="au-control-input__text">After May 2002 Version 1</span>
+					<img src="img/ACT-postmay2002v1.jpg">
 				</label>
 				<p>&nbsp;</p>
 
 				<label class="au-control-input">
-				  <input class="au-control-input__input" type="radio" name="radio-ex"  id="older">
-					<span class="au-control-input__text">Older certificate</span>
-					<img src="img/VIC-older.jpg">
+				  <input class="au-control-input__input" type="radio" name="radio-ex"  id="ACTv2" onchange="certType(this.id);">
+					<span class="au-control-input__text">After May 2002 Version 2</span>
+					<img src="img/ACT-postmay2002v2.jpg">
+				</label>
+				<p>&nbsp;</p>
+
+				<label class="au-control-input">
+				  <input class="au-control-input__input" type="radio" name="radio-ex" id="ACT1930" onchange="certType(this.id);">
+					<span class="au-control-input__text">Before May 2002</span>
+					<img src="img/ACT-1930-may2002.jpg">
 				</label>
 				<br>
 			</div>
+			<div id="nsw-cert-type" class="hidden">
+			<strong>Type of certificate</strong><br>
+			<div class="form-text">Select the certificate that matches yours.</div>
+			<br>
+			<label class="au-control-input">
+				<input class="au-control-input__input" type="radio" name="radio-ex" id="NSWv1" onchange="certType(this.id);">
+				<span class="au-control-input__text">Current Certificate</span>
+				<img src="img/NSW_post1952current.jpg">
+			</label>
+			<p>&nbsp;</p>
 
+			<label class="au-control-input">
+				<input class="au-control-input__input" type="radio" name="radio-ex"  id="NSWv2" onchange="certType(this.id);">
+				<span class="au-control-input__text">Post 1952</span>
+				<img src="img/NSW_post1952old2.jpg">
+			</label>
+			<p>&nbsp;</p>
+
+			<label class="au-control-input">
+				<input class="au-control-input__input" type="radio" name="radio-ex" id="NSWpre1952" onchange="certType(this.id);">
+				<span class="au-control-input__text">Before 1952</span>
+				<img src="img/NSW_pre1952.jpg">
+			</label>
+			<br>
+		</div>
+		<div id="vic-cert-type" class="hidden">
+		<strong>Type of certificate</strong><br><br>
+		<label class="au-control-input">
+			<input class="au-control-input__input" type="radio" name="radio-ex" id="VIC-current" onchange="certType(this.id);">
+			<span class="au-control-input__text">Current certificate</span>
+			<img src="img/VIC-current.jpg">
+		</label>
+		<p>&nbsp;</p>
+
+		<label class="au-control-input">
+			<input class="au-control-input__input" type="radio" name="radio-ex"  id="VIC-older" onchange="certType(this.id);">
+			<span class="au-control-input__text">Older certificate</span>
+			<img src="img/VIC-older.jpg">
+		</label>
+		<br>
+	</div>
 				<br>
-<div id="cert-details">
+<div id="cert-details" class="hidden">
 				<label for="text-input-block">Family Name</label>
-				<div class="form-text">Exactly as it appears on your card</div>
+				<div class="form-text">Exactly as it appears on your certificate</div>
 				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text">
 				<br>
 
 				<label for="text-input-block">Given Name(s)</label>
-				<div class="form-text">Exactly as it appears on your card</div>
+				<div class="form-text">Exactly as it appears on your certificate</div>
 				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text">
 
 
@@ -106,22 +160,25 @@
 				<div class="date date-year">
 					<label for="text-input-block">Date of Birth</label>
 					<div class="form-text">DD/MM/YYYY</div>
-					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block3" type="text" value="">
+					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block3" type="text">
 				</div>
 			</div>
 				<div class="date-entry">
 				<label for="text-input-block">Registration Number</label>
 				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text">
+				<div id="reg-num-img">
 
-			</div>
-			<div class="date-entry" id="year">
-			<div class="date date-year">
-				<label for="text-input-block">Registration Year</label>
-				<div class="form-text">YYYY</div>
-				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block3" type="text" value="">
-				<p>&nbsp;</p>
-			</div>
-			</div>
+				</div>
+				</div>
+				<div id="postMay-2002" class="hidden">
+				<div class="date-entry">
+				<label for="text-input-block">Certificate Number</label>
+				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text">
+				<div id="cert-num-img">
+
+				</div>
+				</div>
+				</div>
 				<p>&nbsp;</p>
   			<p><a class="au-btn" href="#">Next</a></p>
 </div>
@@ -143,12 +200,6 @@
 			</div>
 
 
-			<!--
-			<div class="row">
-			  <div class="col-xs-4"><span>4</span></div>
-			  <div class="col-xs-4"><span>4</span></div>
-			  <div class="col-xs-4"><span>4</span></div>
-			</div>-->
 
 		</div>
 	</div>
@@ -159,36 +210,162 @@
 		</div>
 	</div>
 
-  
+
 </main>
 
 <script>
-	$('#cert-type,#cert-details,#year').hide();
-	$('#select-state').on('change', function() {
-		var s = document.getElementById("select-state");
-		var sVal = s.options[s.selectedIndex].value;
+	function state(stateVal){
+		//alert(stateVal);
+		switch (stateVal){
+			case "1":
+			$('#act-cert-type').removeClass('hidden');
+			$('#vic-cert-type,#cert-details,#nsw-cert-type, #qld-cert-type,#vic-cert-type,#sa-cert-type,#nt-cert-type,#wa-cert-type,#tas-cert-type').addClass('hidden');
+			break;
+			case "2":
+			$('#nsw-cert-type').removeClass('hidden');
+			$('#vic-cert-type,#cert-details,#act-cert-type,#qld-cert-type,#vic-cert-type,#sa-cert-type,#nt-cert-type,#wa-cert-type,#tas-cert-type').addClass('hidden');
+			break;
+			case "5":
+			$('#cert-details ').removeClass('hidden');
+			$('#reg-num-img').find('img').remove();
+			$('#vic-cert-type,#nsw-cert-type,#act-cert-type,#qld-cert-type,#vic-cert-type,#sa-cert-type,#nt-cert-type,#wa-cert-type,#tas-cert-type,#postMay-2002').addClass('hidden');
+			var img = $('<img />').attr({
+				 'src': 'img/TAS-reg.gif',
+				 'alt': 'Registration Number'
+		 }).appendTo('#reg-num-img');
+			break;
+			case "6":
+			$('#cert-details ').removeClass('hidden');
+			$('#reg-num-img').find('img').remove();
+			$('#vic-cert-type,#nsw-cert-type,#act-cert-type,#qld-cert-type,#vic-cert-type,#sa-cert-type,#nt-cert-type,#wa-cert-type,#tas-cert-type,#postMay-2002').addClass('hidden');
+			var img = $('<img />').attr({
+				 'src': 'img/QLD-reg.gif',
+				 'alt': 'Registration Number'
+		 	}).appendTo('#reg-num-img');
+			break;
+			case "8":
+			$('#vic-cert-type').removeClass('hidden');
+			$('#reg-num-img').find('img').remove();
+			$('#nsw-cert-type,#act-cert-type,#qld-cert-type,#sa-cert-type,#nt-cert-type,#wa-cert-type,#tas-cert-type,#postMay-2002').addClass('hidden');
+			break;
+		}
 
-		if (sVal == 1){
-			$('#cert-type').show();
-		}
-		else {
-			$('#cert-type').hide();
-		}
-	});
+	}// end state function
+
+	function certType(typeValue){
+		switch (typeValue){
+			//ACT
+			case "ACTv1":
+			$('#cert-details, #postMay-2002').removeClass('hidden');
+			$('#reg-num-img').find('img').remove();
+			$('#cert-num-img').find('img').remove();
+
+			var img = $('<img />').attr({
+				 'src': 'img/ACT-reg-v1.jpg',
+				 'alt': 'Registration Number'
+			 }).appendTo('#reg-num-img');
+
+			 var img = $('<img />').attr({
+					'src': 'img/ACT-cert-v1.jpg',
+					'alt': 'Registration Number'
+			}).appendTo('#cert-num-img');
+			break;
+
+			case "ACTv2":
+			$('#cert-details, #postMay-2002').removeClass('hidden');
+			$('#reg-num-img').find('img').remove();
+
+			var img = $('<img />').attr({
+				 'src': 'img/ACT-reg-v2.jpg',
+				 'alt': 'Registration Number'
+			 }).appendTo('#reg-num-img');
+
+			 $('#cert-num-img').find('img').remove();
+			 var img = $('<img />').attr({
+					'src': 'img/ACT-cert-v2.jpg',
+					'alt': 'Registration Number'
+			}).appendTo('#cert-num-img');
+			break;
+
+			case "ACT1930":
+			$('#cert-details').removeClass('hidden');
+			$('#postMay-2002').addClass('hidden');
+			$('#cert-num-img').find('img').remove();
+			$('#reg-num-img').find('img').remove();
+
+			var img = $('<img />').attr({
+				 'src': 'img/before-1930-reg.gif',
+				 'alt': 'Registration Number'
+		 	}).appendTo('#reg-num-img');
+			break;
+			//End ACT
+
+			//NSW
+			case "NSWv1":
+			$('#cert-details').removeClass('hidden');
+			$('#postMay-2002').addClass('hidden');
+			$('#cert-num-img').find('img').remove();
+			$('#reg-num-img').find('img').remove();
+
+			var img = $('<img />').attr({
+				 'src': 'img/NSW-reg-v1.gif',
+				 'alt': 'Registration Number'
+		 	}).appendTo('#reg-num-img');
+			break;
+			case "NSWv2":
+			$('#cert-details').removeClass('hidden');
+			$('#postMay-2002').addClass('hidden');
+			$('#cert-num-img').find('img').remove();
+			$('#reg-num-img').find('img').remove();
+
+			var img = $('<img />').attr({
+				 'src': 'img/NSW-reg-v2.gif',
+				 'alt': 'Registration Number'
+		 	}).appendTo('#reg-num-img');
+			break;
+			case "NSWpre1952":
+			$('#cert-details').removeClass('hidden');
+			$('#postMay-2002').addClass('hidden');
+			$('#cert-num-img').find('img').remove();
+			$('#reg-num-img').find('img').remove();
+
+			var img = $('<img />').attr({
+				 'src': 'img/NSW-reg-pre.gif',
+				 'alt': 'Registration Number'
+		 	}).appendTo('#reg-num-img');
+			break;
+			//End NSW
+
+			//Start VIC
+			case "VIC-current":
+			$('#cert-details').removeClass('hidden');
+			$('#postMay-2002').addClass('hidden');
+			$('#cert-num-img').find('img').remove();
+			$('#reg-num-img').find('img').remove();
+			var img = $('<img />').attr({
+				 'src': 'img/VIC-reg-v1.jpg',
+				 'alt': 'Registration Number'
+		 	}).appendTo('#reg-num-img');
+			break;
+			case "VIC-older":
+			$('#cert-details').removeClass('hidden');
+			$('#postMay-2002').addClass('hidden');
+			$('#cert-num-img').find('img').remove();
+			$('#reg-num-img').find('img').remove();
 
 
-	var current = document.getElementById("current");
-	var older = document.getElementById("older");
-	//var help-text = document.getElementById("card-num-help");
-	$('input[name="radio-ex"]').change(function(){
-		if(current.checked){
-			$('#cert-details').show();
-			$('#year').hide();
+			break;
 		}
-		if(older.checked){
-			$('#cert-details, #year').show();
-		}
-	});
+	}
+	function myFunction() {
+    var txt;
+    if (confirm("Are you sure you want to delete")) {
+        //txt = "You pressed OK!";
+    } else {
+        //txt = "You pressed Cancel!";
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
 </script>
 
 </body>

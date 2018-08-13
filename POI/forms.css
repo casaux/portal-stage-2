@@ -123,6 +123,9 @@ p, .au-callout{display: block;width:100%;}
     width:30%;
     text-align:center;
 }
+#reg-num-img,
+#cert-num-img{margin-top:.5rem;padding: .5rem;
+border: 1px solid #efefef;}
 #help-ref-num{width:50%;margin: 1rem 0;}
 .inputfile:focus ~ label,
 .inputfile ~ label:hover {
