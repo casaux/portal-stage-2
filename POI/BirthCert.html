@@ -71,7 +71,7 @@
 					  <option value="1">Australian Capital Territory</option>
 					  <option value="2">New South Wales</option>
 					  <option value="3">Northern Territory</option>
-						<!--<option value="4">South Australia</option>-->
+						<option value="4">South Australia</option>
 						<option value="5">Tasmania</option>
 						<option value="6">Queensland</option>
 						<!--<option value="7">Western Australia</option>-->
@@ -156,17 +156,35 @@
 
 	<label class="au-control-input">
 		<input class="au-control-input__input" type="radio" name="radio-ex"  id="NT-v1" onchange="certType(this.id);">
-		<span class="au-control-input__text">Before 1999 version 1</span>
-		<img src="img/NT-pre1999v1.jpg">
+		<span class="au-control-input__text">1987 to 1999</span>
+		<img src="img/NT-pre1999.jpg">
 	</label>
 	<p>&nbsp;</p>
 
 	<label class="au-control-input">
 		<input class="au-control-input__input" type="radio" name="radio-ex"  id="NT-v2" onchange="certType(this.id);">
-		<span class="au-control-input__text">Before 1999 version 2</span>
-		<img src="img/NT-pre1999v2.jpg">
+		<span class="au-control-input__text">Before 1987</span>
+		<img src="img/NT-pre1999v1.jpg">
 	</label>
 	<br>
+</div>
+
+<div id="sa-cert-type" class="hidden">
+<strong>Type of certificate</strong><br><br>
+<label class="au-control-input">
+	<input class="au-control-input__input" type="radio" name="radio-ex" id="SA-current-v1" onchange="certType(this.id);">
+	<span class="au-control-input__text">Post 1999</span>
+	<img src="img/NT-post1999.jpg">
+</label>
+<p>&nbsp;</p>
+
+<label class="au-control-input">
+	<input class="au-control-input__input" type="radio" name="radio-ex"  id="SA-current-v2" onchange="certType(this.id);">
+	<span class="au-control-input__text">1987 to 1999</span>
+	<img src="img/NT-pre1999.jpg">
+</label>
+
+<br>
 </div>
 				<br>
 <div id="cert-details" class="hidden">
@@ -187,13 +205,24 @@
 					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block3" type="text">
 				</div>
 			</div>
-				<div class="date-entry">
-				<label for="text-input-block">Registration Number</label>
-				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text">
-				<div id="reg-num-img">
 
+
+
+				<div class="date-entry" id="reg-num">
+				<label for="text-input-block">Registration Number</label>
+				<div class="form-text" id="reg"></div>
+				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text">
+				<div id="reg-num-img"></div>
+				</div>
+
+				<div class="date-entry" id="reg-date" class="hidden">
+				<div class="date date-year">
+					<label for="text-input-block">Registration Date</label>
+					<div class="form-text">YYYY/MM/DD</div>
+					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block3" type="text">
 				</div>
 				</div>
+
 				<div id="postMay-2002" class="hidden">
 					<div class="date-entry">
 					<label for="text-input-block">Certificate Number</label>
@@ -242,30 +271,34 @@
 		//alert(stateVal);
 		switch (stateVal){
 			case "1":
-			$('#act-cert-type').removeClass('hidden');
-			$('#vic-cert-type,#cert-details,#nsw-cert-type, #qld-cert-type,#vic-cert-type,#sa-cert-type,#nt-cert-type,#wa-cert-type,#tas-cert-type').addClass('hidden');
+			$('#act-cert-type, #reg-number').removeClass('hidden');
+			$('#reg-date, #vic-cert-type,#cert-details,#nsw-cert-type, #qld-cert-type,#vic-cert-type,#sa-cert-type,#nt-cert-type,#wa-cert-type,#tas-cert-type').addClass('hidden');
 			break;
 			case "2":
 			$('#nsw-cert-type').removeClass('hidden');
-			$('#vic-cert-type,#cert-details,#act-cert-type,#qld-cert-type,#vic-cert-type,#sa-cert-type,#nt-cert-type,#wa-cert-type,#tas-cert-type').addClass('hidden');
+			$('#reg-date, #vic-cert-type,#cert-details,#act-cert-type,#qld-cert-type,#vic-cert-type,#sa-cert-type,#nt-cert-type,#wa-cert-type,#tas-cert-type').addClass('hidden');
 			break;
 			case "3":
 			$('#nt-cert-type').removeClass('hidden');
-			$('#vic-cert-type,#cert-details,#act-cert-type,#qld-cert-type,#vic-cert-type,#sa-cert-type,#nsw-cert-type,#wa-cert-type,#tas-cert-type').addClass('hidden');
+			$('#reg-date, #postMay-2002, #vic-cert-type,#cert-details,#act-cert-type,#qld-cert-type,#vic-cert-type,#sa-cert-type,#nsw-cert-type,#wa-cert-type,#tas-cert-type').addClass('hidden');
+			break;
+			case "4":
+			$('#cert-details, #reg-num').removeClass('hidden');
+			$('#reg-num-img, #nt-cert-type, #reg-date, #postMay-2002, #vic-cert-type,#act-cert-type,#qld-cert-type,#vic-cert-type,#sa-cert-type,#nsw-cert-type,#wa-cert-type,#tas-cert-type').addClass('hidden');
 			break;
 			case "5":
-			$('#cert-details ').removeClass('hidden');
+			$('#cert-details, #reg-date ').removeClass('hidden');
 			$('#reg-num-img').find('img').remove();
-			$('#vic-cert-type,#nsw-cert-type,#act-cert-type,#qld-cert-type,#vic-cert-type,#sa-cert-type,#nt-cert-type,#wa-cert-type,#tas-cert-type,#postMay-2002').addClass('hidden');
+			$('#reg-num, #vic-cert-type,#nsw-cert-type,#act-cert-type,#qld-cert-type,#vic-cert-type,#sa-cert-type,#nt-cert-type,#wa-cert-type,#tas-cert-type,#postMay-2002').addClass('hidden');
 			var img = $('<img />').attr({
 				 'src': 'img/TAS-reg.gif',
 				 'alt': 'Registration Number'
-		 }).appendTo('#reg-num-img');
+		  }).appendTo('#reg-num-img');
 			break;
 			case "6":
-			$('#cert-details ').removeClass('hidden');
+			$('#cert-details, #reg-date').removeClass('hidden');
 			$('#reg-num-img').find('img').remove();
-			$('#vic-cert-type,#nsw-cert-type,#act-cert-type,#qld-cert-type,#vic-cert-type,#sa-cert-type,#nt-cert-type,#wa-cert-type,#tas-cert-type,#postMay-2002').addClass('hidden');
+			$('#reg-num, #vic-cert-type,#nsw-cert-type,#act-cert-type,#qld-cert-type,#vic-cert-type,#sa-cert-type,#nt-cert-type,#wa-cert-type,#tas-cert-type,#postMay-2002').addClass('hidden');
 			var img = $('<img />').attr({
 				 'src': 'img/QLD-reg.gif',
 				 'alt': 'Registration Number'
@@ -274,7 +307,7 @@
 			case "8":
 			$('#vic-cert-type').removeClass('hidden');
 			$('#reg-num-img').find('img').remove();
-			$('#nsw-cert-type,#act-cert-type,#qld-cert-type,#sa-cert-type,#nt-cert-type,#wa-cert-type,#tas-cert-type,#postMay-2002').addClass('hidden');
+			$('#nsw-cert-type,#act-cert-type,#qld-cert-type,#sa-cert-type,#nt-cert-type,#wa-cert-type,#tas-cert-type,#postMay-2002, #cert-details').addClass('hidden');
 			break;
 		}
 
@@ -284,7 +317,7 @@
 		switch (typeValue){
 			//ACT
 			case "ACTv1":
-			$('#cert-details, #postMay-2002').removeClass('hidden');
+			$('#cert-details').removeClass('hidden');
 			$('#reg-num-img').find('img').remove();
 			$('#cert-num-img').find('img').remove();
 
@@ -300,7 +333,7 @@
 			break;
 
 			case "ACTv2":
-			$('#cert-details, #postMay-2002').removeClass('hidden');
+			$('#cert-details').removeClass('hidden');
 			$('#reg-num-img').find('img').remove();
 
 			var img = $('<img />').attr({
@@ -366,7 +399,9 @@
 
 			//Start VIC
 			case "VIC-current":
-			$('#cert-details').removeClass('hidden');
+			$('#cert-details, #reg-date').removeClass('hidden');
+			$('#reg-date label').text('Registration Year');
+			$('#reg-date .form-text').text('YYYY');
 			$('#postMay-2002').addClass('hidden');
 			$('#cert-num-img').find('img').remove();
 			$('#reg-num-img').find('img').remove();
@@ -376,7 +411,9 @@
 		 	}).appendTo('#reg-num-img');
 			break;
 			case "VIC-older":
-			$('#cert-details').removeClass('hidden');
+			$('#cert-details, #reg-date').removeClass('hidden');
+			$('#reg-date label').text('Registration Year');
+			$('#reg-date .form-text').text('YYYY');
 			$('#postMay-2002').addClass('hidden');
 			$('#cert-num-img').find('img').remove();
 			$('#reg-num-img').find('img').remove();
@@ -385,13 +422,41 @@
 
 			//start NT
 			case "NT-current":
-			$('#cert-details,#postMay-2002').removeClass('hidden');
+			$('#cert-details').removeClass('hidden');
 			$('#cert-num-img').find('img').remove();
 			$('#reg-num-img').find('img').remove();
-			/*var img = $('<img />').attr({
-				 'src': 'img/VIC-reg-v1.jpg',
+			//$('#reg').text('8 Digit number for example, 12345678');
+			var img = $('<img />').attr({
+				 'src': 'img/NT-reg-post99.jpg',
 				 'alt': 'Registration Number'
-		 	}).appendTo('#reg-num-img');*/
+		 	}).appendTo('#reg-num-img');
+			/*$('#cert-num-img').find('img').remove();
+			var img = $('<img />').attr({
+				 'src': 'img/NT-cert.gif',
+				 'alt': 'Registration Number'
+		 }).appendTo('#cert-num-img');*/
+			break;
+			case "NT-v1":
+			$('#cert-details').removeClass('hidden');
+			$('#postMay-2002').addClass('hidden');
+			$('#cert-num-img').find('img').remove();
+			$('#reg-num-img').find('img').remove();
+			//$('#reg').text('8 Digit number for example, 12345678');
+			var img = $('<img />').attr({
+				 'src': 'img/NT-reg-pre1999.jpg',
+				 'alt': 'Registration Number'
+		 	}).appendTo('#reg-num-img');
+			break;
+			case "NT-v2":
+			$('#cert-details').removeClass('hidden');
+			$('#postMay-2002').addClass('hidden');
+			$('#cert-num-img').find('img').remove();
+			$('#reg-num-img').find('img').remove();
+			//$('#reg').text('8 Digit number for example, 12345678');
+			var img = $('<img />').attr({
+				 'src': 'img/NT-reg-pre87.jpg',
+				 'alt': 'Registration Number'
+		 	}).appendTo('#reg-num-img');
 			break;
 		}
 	}
