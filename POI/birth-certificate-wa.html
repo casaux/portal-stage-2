@@ -1,0 +1,198 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1">
+
+<title>myCASA</title>
+
+<link rel="stylesheet" href="../furnace.min.css">
+<link rel="stylesheet" href="../lead.css">
+<link rel="stylesheet" href="forms.css">
+<script type="text/javascript" src="../furnace.min.js"></script>
+<script src="../jquery.min.js"></script>
+ <script src="../jquery.js"></script>
+</head>
+
+<body class="live-demo au-body au-grid arn-application">
+
+
+<main class="au-grid">
+
+
+	<div class="header">
+		<div class="container">
+			<div class="row">
+					<div class="logo au-body au-body--dark">
+						<a href="../index.html"><img src="../CASALOGO-white-i.svg" width="256"></a>
+					</div>
+					<div class="user">
+						<div class="au-body au-body--dark">
+						   <a class="au-btn au-btn--dark" href="../signed-out.html">Sign out</a></div>
+					</div>
+
+
+			</div>
+		</div>
+	</div>	<div class="banner">
+	<div class=container>
+		<style>
+			.banner {padding-left: 25px;}
+			.banner {padding-top: 10px;}
+			.banner {padding-bottom: 10px;}
+
+		</style>
+		This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
+	</div>
+	</div>
+
+
+	<div class="body">
+		<div class="container">
+
+			<div class="col-xs-6">
+
+			<nav class="au-breadcrumbs" aria-label="breadcrumb">
+			  <ul class="au-link-list au-link-list--inline">
+				<li><a href="welcome.html">myCASA</a></li>
+				<li>ARN application</li>
+			  </ul>
+			</nav>
+
+			<header class="au-header padding-bottom-1x" role="banner">
+				<h1 class="au-header-heading">Australian Birth Certificate</h1>
+				<a class="au-direction-link au-direction-link--left" href="arn4.html">Back</a>
+				</header>
+				
+			
+				<div class="form-section date-entry">
+				<p class="label">Date of birth</p>
+					<div class="date date-day">
+						<label for="text-input-block1" class="form-text">Day</label>
+						<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block1" type="text" value="">
+					</div>
+					<div class="date date-month">
+						<label for="text-input-block2" class="form-text">Month</label>
+						<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block2" type="text" value="">
+						</div>
+					<div class="date date-year">
+						<label for="text-input-block3" class="form-text">Year</label>
+						<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block3" type="text" value="">
+						</div>
+				</div>
+				<div class="form-text">For example, 31 01 1980</div>
+				<br /><br />
+
+
+				
+			
+				<label for="select1block">Select State</label>
+					<select id="select-state" class="au-select au-select--block" onchange="state(this.value);">
+					  <option value="">Please select</option>
+					  <option value="1">Australian Capital Territory</option>
+					  <option value="2">New South Wales</option>
+					  <option value="3">Northern Territory</option>
+						<option value="4">South Australia</option>
+						<option value="5">Tasmania</option>
+						<option value="6">Queensland</option>
+						<option value="7" selected="selected">Western Australia</option>
+						<option value="8">Victoria</option>
+					</select>
+	
+			<br /><br /><br />
+				
+					<label for="text-input-block">Registration number</label>
+				<div class="form-text">Please enter your registration number exactly as it appears on your birth certificate. <a href="#">Having problems finding your registration number?</a></div>
+				<input class="au-text-input au-text-input--block" name="reg" id="reg" type="text" value="">
+				<br>
+				
+				
+				<a href="#" id="validate" class="au-btn au-btn--primary">Next</a>
+				
+				<br /><br /><br />
+				Correct string for DVS:
+				<div id="output"></div>
+				
+				
+				
+				
+				<hr />
+
+<a href="saved.html" class="au-btn au-btn--secondary">
+  Save and exit
+</a>&nbsp; to continue this application later
+
+
+
+			</form>
+
+
+
+
+
+
+			</div>
+
+
+
+		</div>
+	</div>
+
+<div class="footer">
+		<div class="footer-wrapper">
+			<iframe src="../footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+		</div>
+	</div>
+
+
+</main>
+
+<script>
+	
+$('#validate').bind("click",function(){
+	
+	
+	var DVS = $("#reg").val();
+	
+	var slash=DVS.indexOf("/");
+	
+	var district = DVS.substring(0,slash);
+	var number =  DVS.substring(slash+1,DVS.length);
+	number = number.substring(0,number.indexOf("/"));
+	
+	
+	// append to have extra 0 if needed
+	if(district.length==1){
+		
+		district="0"+district;
+	}
+	
+	if(number.length < 6){
+		
+		
+		var increaseBy = 5 - number.length;
+		
+		while(increaseBy--){
+			
+			number="0"+number;
+			
+		}
+		
+		
+	}
+	
+	
+	$("#output").html(district+""+number);
+	
+	return false;
+	
+	
+	
+	
+});
+	
+</script>
+
+</body>
+</html>
